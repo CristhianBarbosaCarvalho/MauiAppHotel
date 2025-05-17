@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray300}">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="CenterAndExpand"
+                             Padding="10">
+
+            <Label Text = "Calculo da Diaria"
+                   FontFamily="Frede"
+                   FontSize="50"
+                   TextColor="{StaticResource Primary}" />
+
+            <Frame Padding="10"
+                   Margin="0,20,0,0">
+                <VerticalStackLayout>
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, *, 2*">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               TextColor="{StaticResource Primary}"
+                               Text="Adultos :"
+                               FontFamily="Vibes"
+                               FontSize="23"/>
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               TextColor="red"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_adultos}"/>
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"/>
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               TextColor="{StaticResource Primary}"
+                               Text="Crianças :"
+                               FontFamily="Vibes"
+                               FontSize="23"/>
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                               TextColor="red"
+                               Text="{Binding Value}"
+                               BindingContext="{x:Reference stp_criancas}"/>
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"/>
+
+                    </Grid>
+
+                    <Label Text="Escolha sua Suite"
+                           Margin="0,20,0,0" 
+                           TextColor="Red"
+                           FontFamily="Frede"
+                           FontSize="23"/>
+
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione Sua Acomodação"
+                            FontFamily="Vibes"
+                            FontSize="23"
+                            TitleColor="{StaticResource Primary}"/>
+
+                    <Frame Padding="10"
+                           Margin="10">
+
+                        <VerticalStackLayout>
+                            <Label Text="Periodo da Estadia"
+                                   FontFamily="Frede"
+                                   FontSize="23"
+                                   TextColor="{StaticResource Primary}"/>
+
+                            <HorizontalStackLayout Spacing="20">
+
+                                <VerticalStackLayout>
+
+                                    <Label Text="Check-in:" 
+                                           FontFamily="Vibes"
+                                           FontSize="23"
+                                           TextColor="{StaticResource Primary}"/>
+
+                                    <DatePicker x:Name="dtppck_checkin"
+                                                Format="dd/MM/yyyy" />
+
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout>
+
+                                    <Label Text="Check-out:" 
+                                           FontFamily="Vibes"
+                                           FontSize="23"
+                                           TextColor="red" />
+
+                                    <DatePicker x:Name="dtppck_checkout"
+                                                Format="dd/MM/yyyy" />
+
+                                </VerticalStackLayout>
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Button Text="Avançar"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Sobre"
+               TextColor="Blue"
+               FontAttributes="Bold"
+               FontSize="14"
+               HorizontalOptions="Center"
+               Margin="10,20,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSobreClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>    
+</ContentPage>

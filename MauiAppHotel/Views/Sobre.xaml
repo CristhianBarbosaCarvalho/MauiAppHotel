@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="{StaticResource Gray300}">
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center">
+
+            <Label Text="Sobre o Aplicativo"
+                   FontSize="50"
+                   FontFamily="Frede"
+                   TextColor="{StaticResource Primary}" />
+
+            <Label Text="Desenvolvedor: Cristhian Barbosa de Carvalho"
+                   FontSize="30"
+                   FontFamily="Vibes" 
+                   TextColor="Black" />
+
+            <Label Text="Ano de Desenvolvimento: 2025"
+                   FontSize="30"
+                   FontFamily="Vibes"
+                   TextColor="Black" />
+
+            <Label Text="Este projeto foi desenvolvido com &#10; o objetivo de aprimorar o desempenho e a eficiência no &#10; gerenciamento de redes hoteleiras, oferecendo &#10; maior controle e agilidade nos processos de check-in e check-out."
+                   FontSize="20"
+                   TextColor="Black"
+                   Margin="0,10,0,10"/>
+
+
+            <Label Text="Versão: 1.0"
+                   FontSize="15"
+                   TextColor="Gray" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
