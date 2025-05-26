@@ -20,16 +20,17 @@
                    Margin="0,20,0,0">
                 <VerticalStackLayout>
                     <Grid RowDefinitions="Auto, Auto"
-                          ColumnDefinitions="*, *, 2*">
+                          ColumnDefinitions="*, *, *">
 
                         <Label Grid.Row="0" Grid.Column="0"
                                TextColor="{StaticResource Primary}"
                                Text="Adultos :"
                                FontFamily="Vibes"
-                               FontSize="23"/>
+                               FontSize="25"/>
 
                         <Label Grid.Row="0" Grid.Column="1"
                                TextColor="red"
+                               FontSize="20"
                                Text="{Binding Value}"
                                BindingContext="{x:Reference stp_adultos}"/>
 
@@ -43,10 +44,11 @@
                                TextColor="{StaticResource Primary}"
                                Text="Crianças :"
                                FontFamily="Vibes"
-                               FontSize="23"/>
+                               FontSize="25"/>
 
                         <Label Grid.Row="1" Grid.Column="1"
                                TextColor="red"
+                               FontSize="20"
                                Text="{Binding Value}"
                                BindingContext="{x:Reference stp_criancas}"/>
 
@@ -59,58 +61,69 @@
                     </Grid>
 
                     <Label Text="Escolha sua Suite"
+                           HorizontalTextAlignment="Center"
                            Margin="0,20,0,0" 
                            TextColor="Red"
                            FontFamily="Frede"
                            FontSize="23"/>
 
                     <Picker x:Name="pck_quarto"
+                            Margin="10"
                             Title="Selecione Sua Acomodação"
                             FontFamily="Vibes"
-                            FontSize="23"
-                            TitleColor="{StaticResource Primary}"/>
+                            FontSize="25"
+                            TitleColor="{StaticResource Primary}"
+                            ItemDisplayBinding="{Binding Descricao}"/>
 
                     <Frame Padding="10"
                            Margin="10">
 
                         <VerticalStackLayout>
                             <Label Text="Periodo da Estadia"
+                                   Margin="15"
+                                   HorizontalTextAlignment="Center"
                                    FontFamily="Frede"
                                    FontSize="23"
                                    TextColor="{StaticResource Primary}"/>
 
-                            <HorizontalStackLayout Spacing="20">
+                            <VerticalStackLayout Spacing="20"
+                                                 HorizontalOptions="Center">
 
-                                <VerticalStackLayout>
+                                <HorizontalStackLayout>
 
                                     <Label Text="Check-in:" 
+                                           Padding="10"
                                            FontFamily="Vibes"
                                            FontSize="23"
+                                           VerticalOptions="Center"
                                            TextColor="{StaticResource Primary}"/>
 
                                     <DatePicker x:Name="dtppck_checkin"
+                                                DateSelected="dtppck_checkin_DateSelected"
                                                 Format="dd/MM/yyyy" />
 
-                                </VerticalStackLayout>
+                                </HorizontalStackLayout>
 
-                                <VerticalStackLayout>
+                                <HorizontalStackLayout>
 
                                     <Label Text="Check-out:" 
+                                           Padding="10"
                                            FontFamily="Vibes"
                                            FontSize="23"
+                                           VerticalOptions="Center"
                                            TextColor="red" />
 
                                     <DatePicker x:Name="dtppck_checkout"
                                                 Format="dd/MM/yyyy" />
 
-                                </VerticalStackLayout>
+                                </HorizontalStackLayout>
 
-                            </HorizontalStackLayout>
+                            </VerticalStackLayout>
 
                         </VerticalStackLayout>
                     </Frame>
 
-                    <Button Text="Avançar"/>
+                    <Button Text="Avançar" Clicked="Button_Clicked" />
 
                 </VerticalStackLayout>
             </Frame>
