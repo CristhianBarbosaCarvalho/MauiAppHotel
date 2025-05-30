@@ -8,9 +8,9 @@
     <ScrollView>
         <VerticalStackLayout Padding="10"
                              HorizontalOptions="Center"
-                             VerticalOptions="Center">
+                             VerticalOptions="Center" >
 
-            <Label Text="Suite Super Luxo"
+            <Label Text="{Binding QuartoSelecionado.Descricao}"
                    FontFamily="Frede"
                    FontSize="50"
                    TextColor="{StaticResource Primary}"
@@ -32,7 +32,7 @@
                            FontSize="25"
                            TextColor="{StaticResource Primary}" />
                     <Label Grid.Row="0" Grid.Column="1"
-                           Text="2"
+                           Text="{Binding QntAdultos}"
                            FontSize="20"
                            TextColor="Red"
                            HorizontalOptions="Start" />
@@ -43,7 +43,7 @@
                            FontSize="25"
                            TextColor="{StaticResource Primary}" />
                     <Label Grid.Row="1" Grid.Column="1"
-                           Text="1"
+                           Text="{Binding QntCriancas}"
                            FontSize="20"
                            TextColor="Red"
                            HorizontalOptions="Start" />
@@ -85,9 +85,9 @@
                                FontSize="25"
                                HorizontalTextAlignment="Center"/>
 
-                        <Label Grid.Row="1" Grid.Column="0" Text="27/05/2025" TextColor="Red" HorizontalTextAlignment="Center"/>
-                        <Label Grid.Row="1" Grid.Column="1" Text="30/05/2025" TextColor="Red" HorizontalTextAlignment="Center"/>
-                        <Label Grid.Row="1" Grid.Column="2" Text="3" TextColor="Red" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="Red" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}" TextColor="Red" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" TextColor="Red" HorizontalTextAlignment="Center"/>
                     </Grid>
                 </VerticalStackLayout>
             </Frame>
@@ -102,7 +102,7 @@
                            FontSize="20"
                            FontAttributes="Bold"
                            TextColor="{StaticResource Primary}" />
-                    <Label Text=" R$ 750,50"
+                    <Label Text="{Binding ValorTotal, StringFormat='{}{0:c}'}"
                            FontSize="20"
                            TextColor="Red" />
                 </HorizontalStackLayout>

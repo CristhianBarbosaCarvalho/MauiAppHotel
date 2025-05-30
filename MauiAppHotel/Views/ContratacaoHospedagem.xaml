@@ -17,7 +17,7 @@
                    TextColor="{StaticResource Primary}" />
 
             <Frame Padding="10"
-                   Margin="0,20,0,0">
+                   Margin="0,20,0,0" >
                 <VerticalStackLayout>
                     <Grid RowDefinitions="Auto, Auto"
                           ColumnDefinitions="*, *, *">
